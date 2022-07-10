@@ -5,7 +5,9 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _itemHolder;
 
-    private InteractableObject _interactableObject;
+    private InteractableObject _currentObject;
+
+    public InteractableObject InteractableObject => _currentObject;
 
     private void Update()
     {
@@ -29,9 +31,9 @@ public class Interaction : MonoBehaviour
         {
             TryTakeInteractable(interactable);
         }
-        else if (hit.collider.TryGetComponent(out Pedestal pedestal) && _interactableObject != null)
+        else if (hit.collider.TryGetComponent(out Pedestal pedestal) && _currentObject != null)
         {
-            TryReleaseInteractable(_interactableObject);
+            TryReleaseInteractable(_currentObject);
         }
     }
 
@@ -39,7 +41,7 @@ public class Interaction : MonoBehaviour
     {
         if (interactable.TryTake(_itemHolder))
         {
-            _interactableObject = interactable;
+            _currentObject = interactable;
         }
     }
 
@@ -47,7 +49,7 @@ public class Interaction : MonoBehaviour
     {
         if (interactable.TryReturn())
         {
-            _interactableObject = null;
+            _currentObject = null;
         }
     }
 }

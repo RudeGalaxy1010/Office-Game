@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Incident : MonoBehaviour
 {
     [SerializeField] private ParticleSystem[] _particleSystems;
+    [SerializeField] private float _eliminatingTime;
     [SerializeField] private IncidentType _type;
+
+    public float EliminatingTime => _eliminatingTime;
 
     public void Enable()
     {

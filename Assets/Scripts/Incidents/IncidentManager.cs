@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IncidentManager : MonoBehaviour
 {
-    [SerializeField] private IncidentPlace[] _places;
+    [SerializeField] private WorkPlace[] _places;
     [SerializeField] private float _delay;
 
     public void StartCreatingIncidents()
@@ -28,13 +28,13 @@ public class IncidentManager : MonoBehaviour
             return;
         }
 
-        IncidentPlace randomPlace = null;
+        WorkPlace randomPlace = null;
 
         do
         {
             randomPlace = _places[Random.Range(0, _places.Length)];
         }
-        while (randomPlace.TrySetRandomIncident() == false);
+        while (randomPlace.TryChooseForIncident() == false);
     }
 
     private bool HasFreePlace()
