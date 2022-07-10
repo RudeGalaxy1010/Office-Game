@@ -33,6 +33,11 @@ public class WorkPlace : MonoBehaviour
 
     private void Update()
     {
+        if (_trigger.IsTriggering)
+        {
+            TryStartEliminating(_trigger.CurrentInteraction);
+        }
+
         if (_isEliminating)
         {
             _timer += Time.deltaTime;
@@ -62,6 +67,7 @@ public class WorkPlace : MonoBehaviour
             return;
         }
 
+        NeedIncident = false;
         _currentIncident = incident;
         incident.Enable();
     }
@@ -73,21 +79,19 @@ public class WorkPlace : MonoBehaviour
             return;
         }
 
-        _currentIncident.Disable();
-        _currentIncident = null;
-        _timer = 0;
+        ResetElimination();
         IncidentEliminated?.Invoke(this);
+        Debug.Log("Eliminated");
     }
 
     public void Die()
     {
-        _currentIncident.Disable();
-        _currentIncident = null;
+        ResetElimination();
         IsDied = true;
         Died?.Invoke(this);
     }
 
-    private void TryStartEliminating(GameObject player)
+    private void TryStartEliminating(Interaction interaction)
     {
         if (_currentIncident == null)
         {
@@ -95,22 +99,29 @@ public class WorkPlace : MonoBehaviour
         }
 
         // TODO: check for right holding object
-        if (player.TryGetComponent(out Interaction interaction))
-        {
-            _isEliminating = true;
-        }
+        _isEliminating = true;
     }
 
-    private void TryEndEliminating(GameObject player)
+    private void TryEndEliminating(Interaction interaction)
     {
         if (_currentIncident == null)
         {
             return;
         }
 
-        if (player.TryGetComponent(out Interaction interaction))
+        ResetElimination();
+    }
+
+    private void ResetElimination()
+    {
+        if (_currentIncident == null)
         {
-            _isEliminating = false;
+            return;
         }
+
+        _isEliminating = false;
+        _timer = 0;
+        _currentIncident.Disable();
+        _currentIncident = null;
     }
 }

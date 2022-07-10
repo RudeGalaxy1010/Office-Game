@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1363784577269114, guid: 83f5e574addfb424ebd95bbb8ff8b080, type: 3}
       propertyPath: m_Name
-      value: Fire_B
+      value: Fire Incident
       objectReference: {fileID: 0}
     - target: {fileID: 4402860524990602, guid: 83f5e574addfb424ebd95bbb8ff8b080, type: 3}
       propertyPath: m_RootOrder
@@ -117,4 +117,5 @@ MonoBehaviour:
   - {fileID: 602065055114184029}
   - {fileID: 601568473808671171}
   - {fileID: 586728156875928385}
+  _eliminatingTime: 3
   _type: 0

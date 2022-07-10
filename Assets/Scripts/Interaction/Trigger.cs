@@ -6,16 +6,29 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Trigger : MonoBehaviour
 {
-    public event UnityAction<GameObject> Entered;
-    public event UnityAction<GameObject> Exited;
+    public event UnityAction<Interaction> Entered;
+    public event UnityAction<Interaction> Exited;
+
+    private Interaction _currentInteraction;
+
+    public bool IsTriggering => _currentInteraction != null;
+    public Interaction CurrentInteraction => _currentInteraction;
 
     private void OnTriggerEnter(Collider other)
     {
-        Entered?.Invoke(other.gameObject);
+        if (other.TryGetComponent(out Interaction interaction))
+        {
+            _currentInteraction = interaction;
+            Entered?.Invoke(interaction);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Exited?.Invoke(other.gameObject);
+        if (other.TryGetComponent(out Interaction interaction) && interaction.Equals(_currentInteraction))
+        {
+            _currentInteraction = null;
+            Exited?.Invoke(interaction);
+        }
     }
 }
