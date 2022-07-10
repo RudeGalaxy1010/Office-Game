@@ -3,7 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class InteractableObject : MonoBehaviour
 {
-    [SerializeField] protected Pedestal Parent;
+    [SerializeField] private ItemType _itemType;
+    [SerializeField] private Pedestal _parent;
+
+    public ItemType ItemType => _itemType;
 
     public bool TryTake(Transform parent)
     {
@@ -19,10 +22,9 @@ public class InteractableObject : MonoBehaviour
 
     public bool TryReturn()
     {
-        if (Vector3.Distance(transform.position, Parent.transform.position) < 3f)
+        if (Vector3.Distance(transform.position, _parent.transform.position) < 3f)
         {
-            Parent.Place(gameObject);
-            transform.SetParent(Parent.transform);
+            _parent.Place(gameObject);
             return true;
         }
 
