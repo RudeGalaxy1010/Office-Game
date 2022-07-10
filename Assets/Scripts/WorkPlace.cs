@@ -21,13 +21,11 @@ public class WorkPlace : MonoBehaviour
 
     private void OnEnable()
     {
-        _trigger.Entered += TryStartEliminating;
         _trigger.Exited += TryEndEliminating;
     }
 
     private void OnDisable()
     {
-        _trigger.Entered -= TryStartEliminating;
         _trigger.Exited -= TryEndEliminating;
     }
 
@@ -81,7 +79,6 @@ public class WorkPlace : MonoBehaviour
 
         ResetElimination();
         IncidentEliminated?.Invoke(this);
-        Debug.Log("Eliminated");
     }
 
     public void Die()
