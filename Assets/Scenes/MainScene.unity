@@ -653,9 +653,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3309807483105912860, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309807483105912860, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355664770360047560, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561717616676958741, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: _maxIncidentTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782141559377899697, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026330091061919083, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026330091061919083, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026330091061919083, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8494472547282629992, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
       propertyPath: m_Name
       value: Work Place
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892322817977032485, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892322817977032485, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9127034383707336658, guid: e2474b3ab310c714f998f71802dfbe4b, type: 3}
       propertyPath: m_RootOrder
