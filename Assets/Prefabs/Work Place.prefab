@@ -1454,6 +1454,7 @@ GameObject:
   - component: {fileID: 5229084406246670094}
   - component: {fileID: 4770754732323719366}
   - component: {fileID: 3809444849976008987}
+  - component: {fileID: 5622357717176269519}
   - component: {fileID: 4202458281422171879}
   - component: {fileID: 2324570744323795788}
   - component: {fileID: 58155201812178778}
@@ -1647,8 +1648,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 4202458281422171879}
-  - {fileID: 4582536395287687277}
+  - {fileID: 5622357717176269519}
   _progressBar: {fileID: 1463058136052890534}
+--- !u!114 &5622357717176269519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494472547282629992}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedec988b79da1549bef16db22468680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 5229084406246670094}
 --- !u!114 &4202458281422171879
 MonoBehaviour:
   m_ObjectHideFlags: 0
