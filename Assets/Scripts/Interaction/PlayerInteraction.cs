@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _itemHolder;

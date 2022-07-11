@@ -88,7 +88,7 @@ public class WorkPlace : MonoBehaviour
         Died?.Invoke(this);
     }
 
-    private void TryStartEliminating(Interaction interaction)
+    private void TryStartEliminating(PlayerInteraction interaction)
     {
         if (_currentIncident == null)
         {
@@ -99,7 +99,7 @@ public class WorkPlace : MonoBehaviour
         _isEliminating = true;
     }
 
-    private void TryEndEliminating(Interaction interaction)
+    private void TryEndEliminating(PlayerInteraction interaction)
     {
         if (_currentIncident == null)
         {

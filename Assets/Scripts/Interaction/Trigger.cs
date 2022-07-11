@@ -6,16 +6,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Trigger : MonoBehaviour
 {
-    public event UnityAction<Interaction> Exited;
+    public event UnityAction<PlayerInteraction> Exited;
 
-    private Interaction _currentInteraction;
+    private PlayerInteraction _currentInteraction;
 
     public bool IsTriggering => _currentInteraction != null;
-    public Interaction CurrentInteraction => _currentInteraction;
+    public PlayerInteraction CurrentInteraction => _currentInteraction;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Interaction interaction))
+        if (other.TryGetComponent(out PlayerInteraction interaction))
         {
             _currentInteraction = interaction;
         }
@@ -23,7 +23,7 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Interaction interaction) && interaction.Equals(_currentInteraction))
+        if (other.TryGetComponent(out PlayerInteraction interaction) && interaction.Equals(_currentInteraction))
         {
             _currentInteraction = null;
             Exited?.Invoke(interaction);
