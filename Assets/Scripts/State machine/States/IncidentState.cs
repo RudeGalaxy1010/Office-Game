@@ -7,8 +7,11 @@ public class IncidentState : State
 
     private void OnEnable()
     {
-        _timer = 0;
-        Target.StartIncident(_incidents[Random.Range(0, _incidents.Length)]);
+        if (Target.IsIncident == false)
+        {
+            _timer = 0;
+            Target.StartIncident(_incidents[Random.Range(0, _incidents.Length)]);
+        }
     }
 
     private void OnDisable()

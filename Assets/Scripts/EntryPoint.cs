@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
-    [SerializeField] private IncidentManager _incidentManager;
+    [SerializeField] private WorkPlaceManager _incidentManager;
 
     private void Start()
     {
-        _incidentManager.StartCreatingIncidents();
+        _incidentManager.Init();
     }
 }

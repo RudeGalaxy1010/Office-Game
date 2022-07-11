@@ -2,13 +2,19 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class IncidentManager : MonoBehaviour
+public class WorkPlaceManager : MonoBehaviour
 {
-    [SerializeField] private WorkPlace[] _places;
+    [SerializeField] private PlayerInteraction _player;
+    [SerializeField] private WorkPlace[] _workPlaces;
     [SerializeField] private float _delay;
 
-    public void StartCreatingIncidents()
+    public void Init()
     {
+        foreach (var workPlace in _workPlaces)
+        {
+            workPlace.Init(_player);
+        }
+
         StartCoroutine(CreateIncidents());
     }
 
@@ -32,13 +38,13 @@ public class IncidentManager : MonoBehaviour
 
         do
         {
-            randomPlace = _places[Random.Range(0, _places.Length)];
+            randomPlace = _workPlaces[Random.Range(0, _workPlaces.Length)];
         }
         while (randomPlace.TryChooseForIncident() == false);
     }
 
     private bool HasFreePlace()
     {
-        return _places.FirstOrDefault(p => p.IsIncident == false);
+        return _workPlaces.FirstOrDefault(p => p.IsIncident == false);
     }
 }

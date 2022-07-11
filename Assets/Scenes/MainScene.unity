@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 1914820840}
   - component: {fileID: 1914820839}
   m_Layer: 0
-  m_Name: Incident Manager
+  m_Name: Work place manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1043,7 +1043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21275bbb3678fe4192283bf4ebd6c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _places:
+  _player: {fileID: 1699172767}
+  _workPlaces:
   - {fileID: 1180531244}
   _delay: 5
 --- !u!4 &1914820840
