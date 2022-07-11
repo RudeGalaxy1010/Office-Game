@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class InteractableObject : MonoBehaviour
+public class InteractableItem : MonoBehaviour
 {
     [SerializeField] private ItemType _itemType;
     [SerializeField] private Pedestal _parent;
 
-    public ItemType ItemType => _itemType;
+    public ItemType Type => _itemType;
 
     public bool TryTake(Transform parent)
     {

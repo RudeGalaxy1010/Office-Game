@@ -20,6 +20,7 @@ public class WorkPlace : MonoBehaviour
     public float EliminatingTime => _currentIncident.EliminatingTime;
     public bool IsIncident => _currentIncident != null;
     public PlayerInteraction Player => _player;
+    public IncidentType IncidentType => _currentIncident.Type;
 
     private void Update()
     {

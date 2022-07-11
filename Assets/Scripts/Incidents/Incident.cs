@@ -7,6 +7,7 @@ public class Incident : MonoBehaviour
     [SerializeField] private IncidentType _type;
 
     public float EliminatingTime => _eliminatingTime;
+    public IncidentType Type => _type;
 
     public void Enable()
     {

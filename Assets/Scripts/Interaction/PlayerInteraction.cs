@@ -5,9 +5,9 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _itemHolder;
 
-    private InteractableObject _currentObject;
+    private InteractableItem _currentItem;
 
-    public InteractableObject InteractableObject => _currentObject;
+    public ItemType ItemType => _currentItem == null ? ItemType.None : _currentItem.Type;
 
     private void Update()
     {
@@ -27,29 +27,29 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        if (hit.collider.TryGetComponent(out InteractableObject interactable))
+        if (hit.collider.TryGetComponent(out InteractableItem item))
         {
-            TryTakeInteractable(interactable);
+            TryTakeInteractable(item);
         }
-        else if (hit.collider.TryGetComponent(out Pedestal pedestal) && _currentObject != null)
+        else if (hit.collider.TryGetComponent(out Pedestal pedestal) && _currentItem != null)
         {
-            TryReleaseInteractable(_currentObject);
-        }
-    }
-
-    private void TryTakeInteractable(InteractableObject interactable)
-    {
-        if (interactable.TryTake(_itemHolder))
-        {
-            _currentObject = interactable;
+            TryReleaseInteractable(_currentItem);
         }
     }
 
-    private void TryReleaseInteractable(InteractableObject interactable)
+    private void TryTakeInteractable(InteractableItem item)
     {
-        if (interactable.TryReturn())
+        if (item.TryTake(_itemHolder))
         {
-            _currentObject = null;
+            _currentItem = item;
+        }
+    }
+
+    private void TryReleaseInteractable(InteractableItem item)
+    {
+        if (item.TryReturn())
+        {
+            _currentItem = null;
         }
     }
 }
