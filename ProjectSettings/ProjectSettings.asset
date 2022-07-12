@@ -154,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.OfficeGame
+    Android: com.Illthinkaboutitlater.OfficeGame
     Standalone: com.DefaultCompany.Office-Game
   buildNumber:
     Standalone: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeTarget : Target
+public class TimeWinCondition : Condition
 {
     [SerializeField] private float _maxTime;
     [SerializeField] private Slider _progressBar;

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Target : MonoBehaviour
+public abstract class Condition : MonoBehaviour
 {
-    public event UnityAction TargetComplete;
+    public event UnityAction Completed;
     protected bool _isComplete;
     protected bool _isTracking;
 
@@ -18,6 +16,6 @@ public abstract class Target : MonoBehaviour
     {
         StopTracking();
         _isComplete = true;
-        TargetComplete?.Invoke();
+        Completed?.Invoke();
     }
 }

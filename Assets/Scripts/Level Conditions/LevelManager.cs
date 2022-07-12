@@ -7,12 +7,12 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelTarget.AllTargetsReached += OnAllTargetsReached;
+        _levelTarget.WinConditionsCompleted += OnAllTargetsReached;
     }
 
     private void OnDisable()
     {
-        _levelTarget.AllTargetsReached -= OnAllTargetsReached;
+        _levelTarget.WinConditionsCompleted -= OnAllTargetsReached;
     }
 
     private void OnAllTargetsReached()
