@@ -22,6 +22,11 @@ public class WorkPlaceManager : MonoBehaviour
 
     public void Pause()
     {
+        if (_incidentsCoroutine == null)
+        {
+            return;
+        }
+
         StopCoroutine(_incidentsCoroutine);
         _incidentsCoroutine = null;
     }

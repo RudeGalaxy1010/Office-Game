@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ContinueButton : MonoBehaviour
+public abstract class BaseButton : MonoBehaviour
 {
-    private Button _button;
+    protected Button _button;
 
     private void Awake()
     {
@@ -21,8 +21,5 @@ public class ContinueButton : MonoBehaviour
         _button.onClick.RemoveListener(OnClick);
     }
 
-    private void OnClick()
-    {
-        // Load next level
-    }
+    protected abstract void OnClick();
 }
