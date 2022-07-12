@@ -1473,7 +1473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8494472547282629992}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.75, y: 0.5, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1483,6 +1483,7 @@ Transform:
   - {fileID: 9127034383316003682}
   - {fileID: 187660142}
   - {fileID: 6863293222861471092}
+  - {fileID: 8153516617223643719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1562,7 +1563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxIncidentTime: 60
-  _maxInteractionDistance: 2
+  _maxInteractionDistance: 3
 --- !u!114 &999096654238598516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1703,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!1001 &33342446518468045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9127034383707336658}
+    m_Modifications:
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798547414920234288, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+      propertyPath: m_Name
+      value: Office Chair
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+--- !u!4 &8153516617223643719 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8165422967848755082, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+  m_PrefabInstance: {fileID: 33342446518468045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8821650648650774781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8798547414920234288, guid: 208b4ad96b184ab4b972a11d0df27de5, type: 3}
+  m_PrefabInstance: {fileID: 33342446518468045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4219400767020467324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821650648650774781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7347067, y: 1, z: 0.7347067}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &6292457258233525583
 PrefabInstance:
   m_ObjectHideFlags: 0
