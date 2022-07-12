@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class TimeWinCondition : Condition
 {
     [SerializeField] private float _maxTime;
     [SerializeField] private Slider _progressBar;
+    [SerializeField] private TMP_Text _timeText;
 
     private float _timer;
 
@@ -16,12 +18,19 @@ public class TimeWinCondition : Condition
         }
 
         _timer += Time.deltaTime;
-        _progressBar.value = _timer;
+        UpdateUI();
 
         if (_timer >= _maxTime)
         {
             CompleteTarget();
         }
+    }
+
+    private void UpdateUI()
+    {
+        _progressBar.value = _timer;
+        float timeLeft = _maxTime - _timer;
+        _timeText.text = string.Format("{0}:{1}", ((int)timeLeft) / 60, ((int)timeLeft) % 60);
     }
 
     public override void StartTracking()

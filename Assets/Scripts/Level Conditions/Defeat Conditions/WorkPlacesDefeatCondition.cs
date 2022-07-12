@@ -24,11 +24,6 @@ public class WorkPlacesDefeatCondition : Condition
         }
     }
 
-    private void Start()
-    {
-        CompleteTarget();
-    }
-
     private void OnPlaceDied(WorkPlace workPlace)
     {
         if (_diedPlaces.Contains(workPlace))
