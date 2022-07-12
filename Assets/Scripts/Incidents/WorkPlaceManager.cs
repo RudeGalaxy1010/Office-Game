@@ -8,6 +8,8 @@ public class WorkPlaceManager : MonoBehaviour
     [SerializeField] private WorkPlace[] _workPlaces;
     [SerializeField] private float _delay;
 
+    private Coroutine _incidentsCoroutine;
+
     public void Init()
     {
         foreach (var workPlace in _workPlaces)
@@ -15,7 +17,13 @@ public class WorkPlaceManager : MonoBehaviour
             workPlace.Init(_player);
         }
 
-        StartCoroutine(CreateIncidents());
+         _incidentsCoroutine = StartCoroutine(CreateIncidents());
+    }
+
+    public void Pause()
+    {
+        StopCoroutine(_incidentsCoroutine);
+        _incidentsCoroutine = null;
     }
 
     private IEnumerator CreateIncidents()
