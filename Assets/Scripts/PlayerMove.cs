@@ -5,12 +5,14 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Joystick _joystick;
+    [SerializeField] private Animator _animator;
 
     private CharacterController _controller;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
+        _animator.SetBool("Grounded", true);
     }
 
     private void Update()
@@ -24,6 +26,11 @@ public class PlayerMove : MonoBehaviour
         if (_joystick.Direction != Vector2.zero)
         {
             _controller.Move(new Vector3(_joystick.Direction.x, 0, _joystick.Direction.y) * _speed * Time.deltaTime);
+            _animator.SetFloat("MoveSpeed", 10);
+        }
+        else
+        {
+            _animator.SetFloat("MoveSpeed", 0);
         }
     }
 
