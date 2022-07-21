@@ -5,12 +5,13 @@ public class InteractableItem : MonoBehaviour
 {
     [SerializeField] private ItemType _itemType;
     [SerializeField] private Pedestal _parent;
+    [SerializeField] private float _interactionDistance = 3f;
 
     public ItemType Type => _itemType;
 
     public bool TryTake(Transform parent)
     {
-        if (Vector3.Distance(transform.position, parent.transform.position) < 3f)
+        if (Vector3.Distance(transform.position, parent.transform.position) < _interactionDistance)
         {
             transform.position = parent.position;
             transform.SetParent(parent);
@@ -22,7 +23,7 @@ public class InteractableItem : MonoBehaviour
 
     public bool TryReturn()
     {
-        if (Vector3.Distance(transform.position, _parent.transform.position) < 3f)
+        if (Vector3.Distance(transform.position, _parent.transform.position) < _interactionDistance)
         {
             _parent.Place(gameObject);
             return true;

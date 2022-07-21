@@ -46,7 +46,7 @@ public class LevelTarget : MonoBehaviour
 
     private void OnCompleteWinCondition()
     {
-        if (_winConditions.FirstOrDefault(t => t.IsComplete == false))
+        if (_winConditions.FirstOrDefault(t => t.IsCompleted == false))
         {
             return;
         }
@@ -56,7 +56,7 @@ public class LevelTarget : MonoBehaviour
 
     private void OnCompleteDefeatCondition()
     {
-        if (_defeatConditions.FirstOrDefault(t => t.IsComplete == true))
+        if (_defeatConditions.FirstOrDefault(t => t.IsCompleted == true))
         {
             DefeatConditionsCompleted?.Invoke();
         }

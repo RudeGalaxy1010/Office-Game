@@ -13,11 +13,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Raycast(Input.mousePosition);
+            TryInteract(Input.mousePosition);
         }
     }
 
-    private void Raycast(Vector2 touchPosition)
+    private void TryInteract(Vector2 touchPosition)
     {
         Ray ray = _camera.ScreenPointToRay(touchPosition);
         Physics.Raycast(ray, out RaycastHit hit);

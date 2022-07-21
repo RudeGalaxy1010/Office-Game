@@ -4,18 +4,18 @@ using UnityEngine.Events;
 public abstract class Condition : MonoBehaviour
 {
     public event UnityAction Completed;
-    protected bool _isComplete;
+    protected bool _isCompleted;
     protected bool _isTracking;
 
-    public bool IsComplete => _isComplete;
+    public bool IsCompleted => _isCompleted;
 
     public abstract void StartTracking();
     public abstract void StopTracking();
 
-    public void CompleteTarget()
+    public void Complete()
     {
         StopTracking();
-        _isComplete = true;
+        _isCompleted = true;
         Completed?.Invoke();
     }
 }

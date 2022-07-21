@@ -22,7 +22,7 @@ public class TimeWinCondition : Condition
 
         if (_timer >= _maxTime)
         {
-            CompleteTarget();
+            Complete();
         }
     }
 

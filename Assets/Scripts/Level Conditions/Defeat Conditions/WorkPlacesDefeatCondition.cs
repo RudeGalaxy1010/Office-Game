@@ -37,7 +37,7 @@ public class WorkPlacesDefeatCondition : Condition
 
         if (_diedPlaces.Count >= _maxDiedWorkPlaces)
         {
-            CompleteTarget();
+            Complete();
         }
     }
 

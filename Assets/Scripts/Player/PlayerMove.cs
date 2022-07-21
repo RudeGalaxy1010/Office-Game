@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
-        _animator.SetBool("Grounded", true);
+        _animator.SetBool(AnimatorStates.Grounded, true);
     }
 
     private void Update()
@@ -26,11 +26,11 @@ public class PlayerMove : MonoBehaviour
         if (_joystick.Direction != Vector2.zero)
         {
             _controller.Move(new Vector3(_joystick.Direction.x, 0, _joystick.Direction.y) * _speed * Time.deltaTime);
-            _animator.SetFloat("MoveSpeed", 10);
+            _animator.SetFloat(AnimatorStates.MoveSpeed, 10);
         }
         else
         {
-            _animator.SetFloat("MoveSpeed", 0);
+            _animator.SetFloat(AnimatorStates.MoveSpeed, 0);
         }
     }
 
