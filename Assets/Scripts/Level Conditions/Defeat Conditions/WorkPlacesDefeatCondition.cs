@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WorkPlacesDefeatCondition : Condition
@@ -6,7 +5,7 @@ public class WorkPlacesDefeatCondition : Condition
     [SerializeField] private WorkPlace[] _workPlaces;
     [SerializeField] private int _maxDiedWorkPlaces;
 
-    private List<WorkPlace> _diedPlaces;
+    private int _diedPlaces = 0;
 
     private void OnEnable()
     {
@@ -26,16 +25,9 @@ public class WorkPlacesDefeatCondition : Condition
 
     private void OnPlaceDied(WorkPlace workPlace)
     {
-        if (_diedPlaces.Contains(workPlace))
-        {
-            return;
-        }
-        else
-        {
-            _diedPlaces.Add(workPlace);
-        }
+        _diedPlaces++;
 
-        if (_diedPlaces.Count >= _maxDiedWorkPlaces)
+        if (_diedPlaces >= _maxDiedWorkPlaces)
         {
             Complete();
         }
