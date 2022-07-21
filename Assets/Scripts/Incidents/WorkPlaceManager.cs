@@ -8,7 +8,8 @@ public class WorkPlaceManager : MonoBehaviour
     [SerializeField] private WorkPlace[] _workPlaces;
     [SerializeField] private float _delay;
 
-    private Coroutine _incidentsCoroutine;
+    private float _timer;
+    private bool _isPause;
 
     public void Init()
     {
@@ -17,25 +18,26 @@ public class WorkPlaceManager : MonoBehaviour
             workPlace.Init(_player);
         }
 
-         _incidentsCoroutine = StartCoroutine(CreateIncidents());
+         _isPause = false;
     }
 
     public void Pause()
     {
-        if (_incidentsCoroutine == null)
+        _isPause = true;
+    }
+
+    private void Update()
+    {
+        if (_isPause == true)
         {
             return;
         }
 
-        StopCoroutine(_incidentsCoroutine);
-        _incidentsCoroutine = null;
-    }
+        _timer += Time.deltaTime;
 
-    private IEnumerator CreateIncidents()
-    {
-        while (true)
+        if (_timer >= _delay)
         {
-            yield return new WaitForSeconds(_delay);
+            _timer = 0;
             CreateRandomIncident();
         }
     }

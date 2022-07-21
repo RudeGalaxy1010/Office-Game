@@ -32,14 +32,4 @@ public class WorkPlacesDefeatCondition : Condition
             Complete();
         }
     }
-
-    public override void StartTracking()
-    {
-        _isTracking = true;
-    }
-
-    public override void StopTracking()
-    {
-        _isTracking = false;
-    }
 }

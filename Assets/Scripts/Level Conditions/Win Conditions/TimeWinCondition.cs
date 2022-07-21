@@ -10,13 +10,14 @@ public class TimeWinCondition : Condition
 
     private float _timer;
 
+    private void OnEnable()
+    {
+        _progressBar.maxValue = _maxTime;
+        _timer = 0;
+    }
+
     private void Update()
     {
-        if (_isTracking == false)
-        {
-            return;
-        }
-
         _timer += Time.deltaTime;
         UpdateUI();
 
@@ -31,17 +32,5 @@ public class TimeWinCondition : Condition
         _progressBar.value = _timer;
         float timeLeft = _maxTime - _timer;
         _timeText.text = string.Format("{0:d2}:{1:d2}", ((int)timeLeft) / 60, ((int)timeLeft) % 60);
-    }
-
-    public override void StartTracking()
-    {
-        _progressBar.maxValue = _maxTime;
-        _timer = 0;
-        _isTracking = true;
-    }
-
-    public override void StopTracking()
-    {
-        _isTracking = false;
     }
 }

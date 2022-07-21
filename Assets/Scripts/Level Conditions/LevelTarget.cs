@@ -38,9 +38,14 @@ public class LevelTarget : MonoBehaviour
 
     public void Init()
     {
-        foreach (var target in _winConditions)
+        foreach (var condition in _winConditions)
         {
-            target.StartTracking();
+            condition.enabled = true;
+        }
+
+        foreach (var condition in _defeatConditions)
+        {
+            condition.enabled = true;
         }
     }
 

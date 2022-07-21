@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LookAtCamera : MonoBehaviour
+public class ToCameraRotator : MonoBehaviour
 {
     private Camera _camera;
 
