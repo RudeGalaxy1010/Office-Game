@@ -30,7 +30,7 @@ public class TimeWinCondition : Condition
     {
         _progressBar.value = _timer;
         float timeLeft = _maxTime - _timer;
-        _timeText.text = string.Format("{0}:{1}", ((int)timeLeft) / 60, ((int)timeLeft) % 60);
+        _timeText.text = string.Format("{0:d2}:{1:d2}", ((int)timeLeft) / 60, ((int)timeLeft) % 60);
     }
 
     public override void StartTracking()

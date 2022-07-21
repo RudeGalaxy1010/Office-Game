@@ -1822,7 +1822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f424f29152f89804c93a406b3c1c5d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 300
+  _maxTime: 150
   _progressBar: {fileID: 740477156}
   _timeText: {fileID: 1334867967}
 --- !u!114 &399078895
